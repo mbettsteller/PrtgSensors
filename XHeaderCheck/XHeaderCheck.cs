@@ -16,6 +16,7 @@ namespace PrtgSensors
         {
             string url = null;
             string[] headers = null;
+            string proxy = null;
 
             foreach (var arg in args)
             {
@@ -27,10 +28,13 @@ namespace PrtgSensors
                 {
                     headers = arg.Split(':')[1].Split(',');
                 }
-
+                if (arg.ToUpper().StartsWith("-PROXY:"))
+                {
+                    proxy = arg.Substring(arg.IndexOf(':') + 1);
+                }
             }
 
-            var nvc = GetEndpoint(url, null, headers);
+            var nvc = GetEndpoint(url, proxy, headers);
             if (nvc.AllKeys.Contains(Resources.PRTGError))
             {
                 PrtgError.WriteOutput(nvc[Resources.PRTGError]);
