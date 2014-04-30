@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="could_not_be_found_" xml:space="preserve">
-    <value>could not be found.</value>
+    <value> could not be found.</value>
   </data>
   <data name="No_URL_specified_" xml:space="preserve">
     <value>No URL specified!</value>
@@ -127,6 +127,6 @@
     <value>PRTGError</value>
   </data>
   <data name="The_expected_header_" xml:space="preserve">
-    <value>The expected header</value>
+    <value>The expected header </value>
   </data>
 </root>

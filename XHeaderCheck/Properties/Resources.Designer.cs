@@ -61,7 +61,7 @@ namespace PrtgSensors.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to could not be found..
+        ///   Looks up a localized string similar to  could not be found..
         /// </summary>
         internal static string could_not_be_found_ {
             get {
@@ -88,7 +88,7 @@ namespace PrtgSensors.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The expected header.
+        ///   Looks up a localized string similar to The expected header .
         /// </summary>
         internal static string The_expected_header_ {
             get {
