@@ -62,6 +62,7 @@
     <ProjectReference Include="..\PRTGOutputHelpers\PrtgOutputHelpers.csproj">
       <Project>{a33e889f-4a67-4f95-b31d-de36b2734ac2}</Project>
       <Name>PrtgOutputHelpers</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
