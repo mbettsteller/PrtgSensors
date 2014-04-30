@@ -33,7 +33,6 @@ namespace PrtgSensors
                     proxy = arg.Substring(arg.IndexOf(':') + 1);
                 }
             }
-
             var nvc = GetEndpoint(url, proxy, headers);
             if (nvc.AllKeys.Contains(Resources.PRTGError))
             {
@@ -53,11 +52,11 @@ namespace PrtgSensors
                 {
                     result.Channels.Add(prtgChannel);
                 }
-#if DEBUG
                 result.WriteOutput();
-#endif
             }
+#if DEBUG
             Console.ReadKey();
+#endif
         }
 
         private static NameValueCollection GetEndpoint(string url, string proxy, IEnumerable<string> headers)
