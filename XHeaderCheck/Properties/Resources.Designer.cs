@@ -95,5 +95,29 @@ namespace PrtgSensors.Properties {
                 return ResourceManager.GetString("The_expected_header_", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to usage:
+        ///.
+        /// </summary>
+        internal static string usage {
+            get {
+                return ResourceManager.GetString("usage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  -url:&lt;URL&gt; -headers:&lt;header to get, if multiple, separated by comma&gt; [-proxy:&lt;PROXY&gt;]
+        ///
+        ///
+        ///The PROXY parameter is optional, in case you have a server that expects a specific url. Example: you have a load balancer that is splitting your URL www.yourcompany.com/endpoint.html to the servers server1 and server2. Then you write the command parameters like this:
+        ///
+        /// -url:www.yourserver.com/endpoint.html -proxy:server1 -header:X-My-Header.
+        /// </summary>
+        internal static string XHeaderCheck_usage {
+            get {
+                return ResourceManager.GetString("XHeaderCheck_usage", resourceCulture);
+            }
+        }
     }
 }

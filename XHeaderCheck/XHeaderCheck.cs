@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Net;
@@ -17,6 +18,16 @@ namespace PrtgSensors
             string url = null;
             string[] headers = null;
             string proxy = null;
+
+            if (args.Length < 2)
+            {
+                Console.WriteLine(Resources.usage +
+                                  Process.GetCurrentProcess().ProcessName + Resources.XHeaderCheck_usage);
+#if DEBUG
+                Console.ReadKey();
+#endif
+                return;
+            }
 
             foreach (var arg in args)
             {
