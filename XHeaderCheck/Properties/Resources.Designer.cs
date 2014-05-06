@@ -97,6 +97,15 @@ namespace PrtgSensors.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  URL given is: .
+        /// </summary>
+        internal static string URL_given_is__ {
+            get {
+                return ResourceManager.GetString("URL_given_is__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to usage:
         ///.
         /// </summary>

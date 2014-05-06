@@ -141,4 +141,7 @@ The PROXY parameter is optional, in case you have a server that expects a specif
     <value>usage:
 </value>
   </data>
+  <data name="URL_given_is__" xml:space="preserve">
+    <value> URL given is: </value>
+  </data>
 </root>

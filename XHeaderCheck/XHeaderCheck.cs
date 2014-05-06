@@ -81,7 +81,18 @@ namespace PrtgSensors
             request.Credentials = CredentialCache.DefaultCredentials;
             request.AllowAutoRedirect = true;
 
-            var response = (HttpWebResponse)request.GetResponse();
+            HttpWebResponse response=null;
+            try
+            {
+                response = (HttpWebResponse) request.GetResponse();
+            }
+            catch (System.Net.WebException webException)
+            {
+                result.Clear();
+                result.Set(Resources.PRTGError,
+                    webException.Message + webException.InnerException + Resources.URL_given_is__ + url);
+            }
+            if (response == null) return result;
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 result.Clear();
@@ -92,7 +103,8 @@ namespace PrtgSensors
                     else
                     {
                         result.Clear();
-                        result.Set(Resources.PRTGError, Resources.The_expected_header_ + header + Resources.could_not_be_found_);
+                        result.Set(Resources.PRTGError,
+                            Resources.The_expected_header_ + header + Resources.could_not_be_found_);
                         break; //no more checking, one error kills the checking and send an error
                     }
                 }
@@ -100,7 +112,8 @@ namespace PrtgSensors
             else
             {
                 result.Clear();
-                result.Set(Resources.PRTGError, response.StatusCode + " " + response.StatusDescription.ToString(CultureInfo.InvariantCulture));
+                result.Set(Resources.PRTGError,
+                    response.StatusCode + " " + response.StatusDescription.ToString(CultureInfo.InvariantCulture));
             }
             return result;
         }
